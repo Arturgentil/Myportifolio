@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artur Oliveira Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #2e2e2e, #1a1a1a);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(242,163,101,0.2) 0%, rgba(26,26,26,0.8) 60%, #0a0a0a 100%);
+            z-index: -1;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glow 3s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #ccc;
+            animation: fadeIn 5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #f2a365, 0 0 10px #f2a365, 0 0 20px #f2a365;
+            }
+            100% {
+                text-shadow: 0 0 20px #f2a365, 0 0 30px #f2a365, 0 0 50px #f2a365;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .sections {
+            margin-top: 50px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            padding: 30px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #1a1a1a, #2e2e2e);
+            box-shadow: 10px 10px 20px #0a0a0a, -10px -10px 20px #363636;
+        }
+
+        .section .info {
+            max-width: 50%;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: #f2a365;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+
+        .section img {
+            width: 300px;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .section img:hover {
+            transform: scale(1.1);
+        }
+
+        .skills ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .skills li {
+            padding: 15px 25px;
+            background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+            border-radius: 8px;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 5px 5px 10px #0a0a0a, -5px -5px 10px #363636;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skills li:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 10px 20px #0a0a0a, -10px -10px 20px #363636;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            color: #f2a365;
+        }
+
+        .contact form {
+            display: inline-block;
+            text-align: left;
+            max-width: 500px;
+            width: 100%;
+            background: linear-gradient(145deg, #1a1a1a, #2e2e2e);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 10px 10px 20px #0a0a0a, -10px -10px 20px #363636;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 1rem;
+            box-shadow: inset 5px 5px 10px #0a0a0a, inset -5px -5px 10px #363636;
+        }
+
+        .contact button {
+            background: #f2a365;
+            color: #121212;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact button:hover {
+            background: #d17a4f;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Artur.o Developer</h1>
+        <p>{Front-End Developer}</p>
+    </header>
+
+    <main class="container sections">
+        <section class="section">
+            <div class="info">
+                <h2>sobre mim</h2>
+                <p>Olá, meu nome é Artur, e estou iniciando minha jornada como programador. Estou mergulhando no mundo da tecnologia com muita vontade de aprender e crescer. Apesar de ainda não ter experiência prática em projetos, tenho me dedicado intensamente a estudar HTML, CSS e JavaScript, desenvolvendo uma base sólida para criar sites e aplicações web interativas.
+
+                    Meu foco atual é ganhar experiência, seja colaborando em projetos ou desenvolvendo ideias próprias. Acredito que cada desafio é uma oportunidade para evoluir e refinar minhas habilidades.                    
+                    Se você está em busca de alguém dedicado e com sede de aprendizado, vamos conversar! Estou aberto a novas ideias, colaborações e desafios que me ajudem a construir minha trajetória como programador.</p>
+            </div>
+            <img src="https://via.placeholder.com/300" alt="Developer Profile Image">
+        </section>
+
+        <section class="section">
+            <div class="info">
+                <h2>habilidades</h2>
+                <p>Ferramentas que uitilizo:</p>
+                <div class="skills">
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+            <img src="https://via.placeholder.com/300" alt="Skills Illustration">
+        </section>
+
+        <!-- Seção de Contato -->
+<section id="contato" style="background-color: ; padding: 20px; text-align: center;">
+    <h2>Entre em Contato</h2>
+    <p>Gostou do meu trabalho ou quer colaborar em um projeto? Me mande uma mensagem!</p>
+    <ul style="list-style: none; padding: 0;">
+        <li>Email: <a href="mailto:seuemail@gmail.com" style="color: #007BFF;">arturgentil2020@gmail.com</a></li>
+        <li>WhatsApp: <a href="https://wa.me/seunumerodetelefone" target="_blank" style="color: #007BFF;">(61) 99324-9001</a></li>
+    </ul>
+    <div>
+        <a href="https://www.linkedin.com/in/seulinkedin" target="_blank" style="margin: 0 10px;">LinkedIn</a>
+        <a href="https://github.com/seugit" target="_blank" style="margin: 0 10px;">GitHub</a>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        &copy; 2024 Creative Developer Portfolio. All rights reserved.
+    </footer>
+</body>
+</html>
